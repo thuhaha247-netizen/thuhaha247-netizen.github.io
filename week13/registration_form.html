@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form - Lab Exercise</title>
+    <style>
+        /* CSS phong cách màu hồng dành riêng cho Hà */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #fff0f5; /* Hồng cực nhạt */
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .form-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+            width: 650px;
+            border: 2px solid #ffb6c1;
+        }
+
+        h2 {
+            color: #b22222; /* Màu đỏ đô giống chữ REGISTRATION trong ảnh */
+            text-transform: uppercase;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ffc0cb;
+            margin: 15px 0;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .label {
+            width: 160px;
+            color: #4682b4; /* Màu xanh SteelBlue cho nhãn */
+            font-weight: 500;
+        }
+
+        input[type="text"], 
+        input[type="password"], 
+        select {
+            padding: 4px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        /* Tùy chỉnh ô ngày sinh */
+        .select-month { width: 130px; }
+        .input-short { width: 70px; margin-left: 8px; }
+        .date-hint { color: #4682b4; font-size: 14px; margin-left: 10px; }
+
+        /* Phần sở thích */
+        .interests-section {
+            margin-top: 15px;
+            color: #4682b4;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            padding-left: 160px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .checkbox-item input { margin-right: 10px; }
+
+        /* Nút Register 3D màu đỏ theo Figure 6.6 */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-register {
+            background: linear-gradient(to bottom, #ff3333 0%, #990000 100%);
+            color: white;
+            border: 2px solid #660000;
+            padding: 10px 45px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            transition: 0.2s;
+        }
+
+        .btn-register:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <h2>REGISTRATION</h2>
+    <hr>
+
+    <form action="#">
+        <!-- Thông tin đăng nhập -->
+        <div class="row">
+            <div class="label">Username:</div>
+            <input type="text" name="user" size="35">
+        </div>
+        <div class="row">
+            <div class="label">Password:</div>
+            <input type="password" name="pass" size="35">
+        </div>
+        <div class="row">
+            <div class="label">Re-type Password:</div>
+            <input type="password" name="re-pass" size="35">
+        </div>
+
+        <hr>
+
+        <!-- Thông tin ngày sinh và ảnh -->
+        <div class="row">
+            <div class="label">Birthday:</div>
+            <select name="month" class="select-month">
+                <option value="">[select one]</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <!-- Thêm các tháng khác nếu cần -->
+            </select>
+            <input type="text" name="day" class="input-short">
+            <input type="text" name="year" class="input-short">
+            <span class="date-hint">(Month Day, Year)</span>
+        </div>
+
+        <div class="row">
+            <div class="label">Images:</div>
+            <input type="file" name="image">
+        </div>
+
+        <hr>
+
+        <!-- Thông tin cá nhân -->
+        <div class="row">
+            <div class="label">First Name:</div>
+            <input type="text" name="fname" style="width: 130px;">
+            <div style="color: #4682b4; margin: 0 10px 0 20px;">Last Name:</div>
+            <input type="text" name="lname" style="width: 130px;">
+        </div>
+
+        <!-- Sở thích -->
+        <div class="interests-section">
+            <div>Interests (optional):</div>
+            <div class="interests-grid">
+                <div class="checkbox-item"><input type="checkbox"> Entertainment</div>
+                <div class="checkbox-item"><input type="checkbox"> Business</div>
+                <div class="checkbox-item"><input type="checkbox"> Home & Family</div>
+                <div class="checkbox-item"><input type="checkbox"> Computers & Technology</div>
+                <div class="checkbox-item"><input type="checkbox"> Health</div>
+                <div class="checkbox-item"><input type="checkbox"> Personal Finance</div>
+                <div class="checkbox-item"><input type="checkbox"> Music</div>
+                <div class="checkbox-item"><input type="checkbox"> Small Business</div>
+            </div>
+        </div>
+
+        <!-- Nút Register -->
+        <div class="footer">
+            <button type="submit" class="btn-register">REGISTER</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
